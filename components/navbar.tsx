@@ -1,8 +1,10 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-export default function Navbar(){
+import styles from "@/styles/components/navbar.module.css";
+
+export default function Navbar() {
     return (
-        <nav>
+        <nav className={styles.navbar}>
             <ul>
                 <li>
                     <Link href="/">Home</Link>
@@ -15,5 +17,5 @@ export default function Navbar(){
                 </li>
             </ul>
         </nav>
-    )
+    );
 }
