@@ -15,6 +15,9 @@ export default function Navbar() {
                 <li>
                     <Link href="/about">Sobre nós</Link>
                 </li>
+                <li>
+                    <Link href="/todos">Todos</Link>
+                </li>
             </ul>
         </nav>
     );
