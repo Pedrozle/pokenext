@@ -1,0 +1,39 @@
+.body {
+    width: 100%;
+}
+
+.body h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.body h1 p {
+    display: inline;
+    margin-right: 20px;
+}
+
+.body h1 p span {
+    font-weight: bold;
+    color: #ff3b3b;
+}
+
+.pokedex {
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 1px 1px 0px 1px inset #ccc;
+    background-color: #f8f8f8;
+}
+
+.pokedex_title{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.list{
+    margin: 5px;
+}

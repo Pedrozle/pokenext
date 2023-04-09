@@ -10,7 +10,7 @@ export default function MainContainer({ children }: any) {
                 <title>PokéNext</title>
             </Head>
             <Header />
-            <main>{children}</main>
+            <main className="container">{children}</main>
             <Footer />
         </>
     );
