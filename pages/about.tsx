@@ -9,12 +9,7 @@ export default function About() {
                 PokéNext é um projeto desenvolvido para o aprendizado da
                 framework Next.js junto da biblioteca React
             </p>
-            <Image
-                src="/pokemon.webp"
-                width={900}
-                height={300}
-                alt=""
-            />
+            <Image src="/pokemon.webp" width={900} height={300} alt="" />
         </div>
     );
 }

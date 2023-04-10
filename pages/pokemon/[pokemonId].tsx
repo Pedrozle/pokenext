@@ -1,27 +1,39 @@
-import Card from "@/components/Card";
-import styles from "@/styles/pages/Home.module.css";
+import styles from "@/styles/pages/pokemonId.module.css";
 import Image from "next/image";
 
-export async function getStaticProps() {
+export const getStaticPaths = async () => {
     const maxPokemons = 50;
     const api = `https://pokeapi.co/api/v2/pokemon/`;
 
     const response = await fetch(`${api}/?limit=${maxPokemons}`);
     const data = await response.json();
 
-    //adiciona index nos pokemons
-    data.results.forEach((item: any, index: number) => {
-        item.id = index + 1;
+    const paths = data.results.map((pokemon: any, index: number) => {
+        return {
+            params: { pokemonId: (index + 1).toString() },
+        };
     });
 
     return {
+        paths,
+        fallback: false,
+    };
+};
+
+export const getStaticProps = async (context: any) => {
+    const id = context.params.pokemonId;
+
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const data = await response.json();
+
+    return {
         props: {
-            pokemons: data.results,
+            pokemon: data,
         },
     };
-}
+};
 
-export default function Home({ pokemons }: any) {
+export default function PokemonId({ pokemon }: any) {
     return (
         <div className={styles.body}>
             <h1>
@@ -32,11 +44,7 @@ export default function Home({ pokemons }: any) {
             </h1>
             <p className={styles.pokedex_title}>PokéDex</p>
             <div className={styles.pokedex}>
-                <div className={styles.card_container}>
-                    {pokemons.map((pokemon: any) => (
-                        <Card pokemon={pokemon} />
-                    ))}
-                </div>
+                <p>{pokemon.name}</p>
             </div>
         </div>
     );
