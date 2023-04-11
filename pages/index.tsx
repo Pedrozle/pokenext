@@ -12,6 +12,9 @@ export async function getStaticProps() {
     //adiciona index nos pokemons
     data.results.forEach((item: any, index: number) => {
         item.id = index + 1;
+        let num = 0;
+        item.id > 100 ? (num = 4) : (num = 3);
+        item.id = String(item.id).padStart(num, "0");
     });
 
     return {

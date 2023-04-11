@@ -8,18 +8,18 @@ export default function Card({ pokemon }: any) {
         <div className={styles.card}>
             <Image
                 key={pokemon.id}
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+                src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.id}.png`}
                 height={100}
                 width={100}
                 alt={`pokemons ${pokemon.name}`}
             />
             <p key={pokemon.id} className={styles.card_id}>
-                #{pokemon.id}
+                <span key={pokemon.id}>#{pokemon.id}</span>
             </p>
             <p className={styles.card_title} key={pokemon.id}>
                 {pokemon.name}
             </p>
-            <Link key={pokemon.id} className={styles.card_button} href={`/pokemon/${pokemon.id}`}>
+            <Link key={pokemon.id} className={styles.card_button} href={`/pokemon/${parseInt(pokemon.id)}`}>
                 Detalhes
             </Link>
         </div>
