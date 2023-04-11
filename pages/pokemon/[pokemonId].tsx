@@ -68,7 +68,7 @@ export default function PokemonId({ pokemon }: any) {
                             {pokemon.types.map((item: any) => (
                                 <p
                                     key={item.slot}
-                                    className={styles.pokemon_type}
+                                    className={`${styles.pokemon_type} ${styles[''+ item.type.name]}`}
                                 >
                                     {item.type.name}
                                 </p>
