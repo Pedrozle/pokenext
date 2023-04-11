@@ -3,7 +3,7 @@ import styles from "@/styles/pages/Home.module.css";
 import Image from "next/image";
 
 export async function getStaticProps() {
-    const maxPokemons = 50;
+    const maxPokemons = 100;
     const api = `https://pokeapi.co/api/v2/pokemon/`;
 
     const response = await fetch(`${api}/?limit=${maxPokemons}`);
@@ -37,7 +37,7 @@ export default function Home({ pokemons }: any) {
             <div className={styles.pokedex}>
                 <div className={styles.card_container}>
                     {pokemons.map((pokemon: any) => (
-                        <Card pokemon={pokemon} />
+                        <Card key={pokemon.id} pokemon={pokemon} />
                     ))}
                 </div>
             </div>

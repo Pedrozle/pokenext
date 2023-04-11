@@ -5,7 +5,7 @@ import Link from "next/link";
 import * as Icon from "react-bootstrap-icons";
 
 export const getStaticPaths = async () => {
-    const maxPokemons = 50;
+    const maxPokemons = 100;
     const api = `https://pokeapi.co/api/v2/pokemon/`;
 
     const response = await fetch(`${api}/?limit=${maxPokemons}`);
