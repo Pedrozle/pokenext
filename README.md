@@ -6,11 +6,17 @@ Um projeto React utilizando Next.js como framework
 
 ## Screenshots
 
-### Home | Projetos de Fulano
+### Home
+<img src="./public/home.webp"></img>
 
-<img src="./public/Home.svg" width="20%"></img>
-<img src="./public/Repos.svg" width="20%"></img>
+## Detalhes pokemon
+<img src="./public/pokemon_details.webp"></img>
 
+## Sobre
+<img src="./public/about.webp"></img>
+
+## 404
+<img src="./public/error.webp"></img>
 ### Documentação
 
 Este projeto tem como formato um site réplica da PokéDex do anime de Pokémon.
